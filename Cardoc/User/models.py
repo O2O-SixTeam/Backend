@@ -1,10 +1,11 @@
-from django.conf import settings
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
+
+from Cardoc import settings
 
 
 class CustomUserManager(BaseUserManager):
@@ -30,14 +31,13 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault('is_superuser', True)
         return self._create_user(email, password, **extra_fields)
 
-
 GENDER_CHOICE = (
     ('M', 'Male'),
     ('F', 'Female'),
 )
 
 
-class CustomUser(AbstractBaseUser, PermissionsMixin):
+class CustomUser(AbstractBaseUser):
     name = models.CharField(max_length=20, null=True, blank=True)
     phone = models.CharField(max_length=11, null=True, blank=True)
     gender = models.CharField(choices=GENDER_CHOICE, null=True, blank=True, max_length=10)
@@ -48,7 +48,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     is_staff = models.BooleanField(default=False, blank=True)
 
+    objects = CustomUserManager()
+
     USERNAME_FIELD = 'CustomID'
     REQUIRED_FIELDS = ['name', 'phone', 'gender', 'birth', 'email']
 
-    objects = CustomUserManager()
+
+class Shop(models.Model):
+    owner = models.ForeignKey(CustomUser, related_name='owner', null=False)
+    shopname = models.CharField(max_length=40, null=False, blank=False)
