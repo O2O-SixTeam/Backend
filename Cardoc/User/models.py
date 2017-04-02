@@ -7,6 +7,11 @@ from rest_framework.authtoken.models import Token
 
 from Cardoc import settings
 
+GENDER_CHOICE = (
+    ('M', 'Male'),
+    ('F', 'Female'),
+)
+
 
 class CustomUserManager(BaseUserManager):
     @receiver(post_save, sender=settings.AUTH_USER_MODEL)
@@ -15,45 +20,54 @@ class CustomUserManager(BaseUserManager):
             token = Token.objects.create(user=instance)
             print(token)
 
-    def _create_user(self, email, password=None, **extra_fields):
-        if not email:
-            raise ValueError('Give me Email')
-        user = self.model(email=email, password=password, **extra_fields)
+    # def create_user(self, CustomID, password, **extra_fields):
+    #     extra_fields.setdefault('is_staff', False)
+    #     return self._create_user(CustomID, password, **extra_fields)
+    #
+    # def create_superuser(self, CustomID, password, **extra_fields):
+    #     extra_fields.setdefault('is_staff', True)
+    #     return self._create_user(CustomID, password, **extra_fields)
+    #
+    # def _create_user(self, CustomID, password, **extra_fields):
+    #     user = self.model(
+    #         CustomID=CustomID,
+    #         **extra_fields
+    #     )
+    #
+    #     user.set_password(password)
+    #     user.save(using=self._db)
+    #     return user
 
-        user.save(using=self._db)
+    def create_user(self, CustomID, password=None):
+        user = self.model(
+            CustomID=CustomID,
+        )
+        user.set_password(password)
+        user.save()
         return user
 
-    def create_user(self, email, password=None, **extra_fields):
-        extra_fields.setdefault('is_active',True)
-        return self._create_user(email, password, **extra_fields)
-
-    def create_superuser(self, email, password, **extra_fields):
-        extra_fields.setdefault('is_superuser', True)
-        return self._create_user(email, password, **extra_fields)
-
-GENDER_CHOICE = (
-    ('M', 'Male'),
-    ('F', 'Female'),
-)
+    def create_superuser(self, CustomID, password):
+        user = self.model(
+            CustomID=CustomID,
+        )
+        user.set_password(password)
+        user.is_staff = True
+        user.is_superuser = True
+        user.save()
+        return user
 
 
-class CustomUser(AbstractBaseUser):
+class CustomUser(PermissionsMixin, AbstractBaseUser):
     name = models.CharField(max_length=20, null=True, blank=True)
     phone = models.CharField(max_length=11, null=True, blank=True)
     gender = models.CharField(choices=GENDER_CHOICE, null=True, blank=True, max_length=10)
-    email = models.EmailField(max_length=50, unique=True)
+    email = models.EmailField(max_length=50, null=True, blank=True)
     birth = models.DateField(null=True, blank=True)
     CustomID = models.CharField(max_length=15, null=True, blank=True, unique=True)
-    password = models.CharField(max_length=20, null=True, blank=True)
 
     is_staff = models.BooleanField(default=False, blank=True)
 
-    objects = CustomUserManager()
-
     USERNAME_FIELD = 'CustomID'
-    REQUIRED_FIELDS = ['name', 'phone', 'gender', 'birth', 'email']
+    REQUIRED_FIELDS = []
 
-
-class Shop(models.Model):
-    owner = models.ForeignKey(CustomUser, related_name='owner', null=False)
-    shopname = models.CharField(max_length=40, null=False, blank=False)
+    objects = CustomUserManager()
