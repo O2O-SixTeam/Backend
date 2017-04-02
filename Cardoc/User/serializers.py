@@ -9,3 +9,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = CustomUser
         fields = ('name', 'phone', 'gender', 'email', 'birth', 'CustomID', 'password')
+
+
+    def create(self, validated_data):
+        instance = CustomUser.objects.create_user(**validated_data)
+        return instance

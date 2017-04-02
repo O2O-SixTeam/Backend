@@ -20,35 +20,19 @@ class CustomUserManager(BaseUserManager):
             token = Token.objects.create(user=instance)
             print(token)
 
-    # def create_user(self, CustomID, password, **extra_fields):
-    #     extra_fields.setdefault('is_staff', False)
-    #     return self._create_user(CustomID, password, **extra_fields)
-    #
-    # def create_superuser(self, CustomID, password, **extra_fields):
-    #     extra_fields.setdefault('is_staff', True)
-    #     return self._create_user(CustomID, password, **extra_fields)
-    #
-    # def _create_user(self, CustomID, password, **extra_fields):
-    #     user = self.model(
-    #         CustomID=CustomID,
-    #         **extra_fields
-    #     )
-    #
-    #     user.set_password(password)
-    #     user.save(using=self._db)
-    #     return user
-
-    def create_user(self, CustomID, password=None):
+    def create_user(self, CustomID, password=None, **extra_fields):
         user = self.model(
             CustomID=CustomID,
+            **extra_fields
         )
         user.set_password(password)
         user.save()
         return user
 
-    def create_superuser(self, CustomID, password):
+    def create_superuser(self, CustomID, password, **extra_fields):
         user = self.model(
             CustomID=CustomID,
+            **extra_fields
         )
         user.set_password(password)
         user.is_staff = True
