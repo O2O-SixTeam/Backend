@@ -4,8 +4,8 @@ from Shop.models import Shop
 
 
 class ShopSerializer(serializers.HyperlinkedModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
+    owner = serializers.ReadOnlyField(source='owner.CustomID')
 
     class Meta:
         model = Shop
-        fields = ('shopname','owner')
+        fields = ('owner', 'shopname')

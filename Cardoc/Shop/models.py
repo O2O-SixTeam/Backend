@@ -1,8 +1,10 @@
+from django.conf import settings
 from django.db import models
-
-from User.models import CustomUser
 
 
 class Shop(models.Model):
-    owner = models.ForeignKey(CustomUser, blank=True)
     shopname = models.CharField(max_length=30, blank=False)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='shops', blank=False)
+
+    def save(self, *args, **kwargs):
+        super(Shop, self).save(*args, **kwargs)
