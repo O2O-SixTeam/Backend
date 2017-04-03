@@ -13,6 +13,9 @@ class Shop(models.Model):
     longitude = models.CharField(max_length=20, blank=True, null=True)
     latitude = models.CharField(max_length=20, blank=True, null=True)
     zone = models.CharField(max_length=20, blank=True, null=True)
+    photo1 = models.ImageField(max_length=None, blank=True, null=True)
+    photo2 = models.ImageField(max_length=None, blank=True, null=True)
+    photo3 = models.ImageField(max_length=None, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         super(Shop, self).save(*args, **kwargs)

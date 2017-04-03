@@ -17,11 +17,13 @@ from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
 
 from Shop import views as shopview
+from Request import views as requestview
 from User import views
 
 router = DefaultRouter()
-router.register(r'user', views.UserViewSet,)
-router.register(r'shop', shopview.ShopViewSet,)
+router.register(r'user', views.UserViewSet)
+router.register(r'shop', shopview.ShopViewSet)
+router.register(r'request', requestview.RequestVeiwSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

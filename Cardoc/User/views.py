@@ -24,8 +24,8 @@ class UserViewSet(viewsets.ModelViewSet):
         return Response({'token': token.key}, status=status.HTTP_201_CREATED, headers=headers)
 
 
-@api_view(('GET',))
-def api_root(request, format=None):
-    return Response({
-        'user-detail': reverse('user-detail', request=request, format=format)
-    })
+# @api_view(('GET',))
+# def api_root(request, format=None):
+#     return Response({
+#         'user-detail': reverse('user-detail', request=request, format=format)
+#     })
