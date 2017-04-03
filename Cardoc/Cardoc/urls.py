@@ -20,8 +20,8 @@ from Shop import views as shopview
 from User import views
 
 router = DefaultRouter()
-router.register(r'user', views.UserViewSet, base_name='user')
-router.register(r'shop', shopview.ShopViewSet, base_name='shop')
+router.register(r'user', views.UserViewSet,)
+router.register(r'shop', shopview.ShopViewSet,)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

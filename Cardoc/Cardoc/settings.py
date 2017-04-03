@@ -26,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES': (
 #         'rest_framework.permissions.IsAuthenticated',
@@ -49,9 +48,13 @@ INSTALLED_APPS = [
     'Shop',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 
 ]
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,6 +64,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ORIGIN_WHITELIST = (
+    'kardoc.kr:8000',
+    'localhost:8000',
+    'ec2-13-124-46-207.ap-northeast-2.compute.amazonaws.com:8000'
+)
 ROOT_URLCONF = 'Cardoc.urls'
 
 TEMPLATES = [
