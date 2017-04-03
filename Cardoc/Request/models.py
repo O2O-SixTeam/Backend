@@ -24,6 +24,7 @@ class Request(models.Model):
     detail = models.CharField(max_length=200, blank=True, null=True)
     extra = models.CharField(choices=EXTRA_CHOICE, max_length=10, blank=True, null=True)
     number = models.CharField(max_length=11, blank=True, null=True)
+    completed = models.NullBooleanField(blank=True,null=True)
 
     def save(self, *args, **kwargs):
         super(Request, self).save(*args, **kwargs)

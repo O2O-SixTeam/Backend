@@ -10,5 +10,5 @@ class RequestSerializer(serializers.HyperlinkedModelSerializer):
         model = Request
         fields = (
             'owner', 'brand', 'model', 'carnumber', 'broken1', 'broken2', 'broken3', 'photo1', 'photo2', 'photo3',
-            'detail', 'extra', 'number'
+            'detail', 'extra', 'number','completed',
         )
