@@ -18,12 +18,14 @@ from rest_framework.routers import DefaultRouter
 
 from Shop import views as shopview
 from Request import views as requestview
+from Estimate import views as estimateview
 from User import views
 
 router = DefaultRouter()
 router.register(r'user', views.UserViewSet)
 router.register(r'shop', shopview.ShopViewSet)
 router.register(r'request', requestview.RequestVeiwSet)
+router.register(r'estimate', estimateview.EstimateViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

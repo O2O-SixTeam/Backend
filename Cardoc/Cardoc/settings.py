@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'User',
     'Shop',
     'Request',
+    'Estimate',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',

@@ -3,9 +3,9 @@ from django.db import models
 
 
 class Shop(models.Model):
-    shopname = models.CharField(max_length=30, blank=False)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='shop', blank=False)
 
+    shopname = models.CharField(max_length=30, blank=False)
     address = models.CharField(max_length=50, blank=True, null=True)
     detail = models.CharField(max_length=50, blank=True, null=True)
     video = models.CharField(max_length=50, blank=True, null=True)
@@ -20,7 +20,5 @@ class Shop(models.Model):
     def save(self, *args, **kwargs):
         super(Shop, self).save(*args, **kwargs)
 
-
 # detail = models.CharField(max_length=100, blank=True, null=True),
 #
-
