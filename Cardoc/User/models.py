@@ -47,7 +47,7 @@ class CustomUser(PermissionsMixin, AbstractBaseUser):
     gender = models.CharField(choices=GENDER_CHOICE, null=True, blank=True, max_length=10)
     email = models.EmailField(max_length=50, null=True, blank=True)
     birth = models.DateField(null=True, blank=True)
-    customid = models.CharField(max_length=50, null=True, blank=True, unique=True)
+    customid = models.CharField(max_length=50, null=True, blank=True, unique=True, )
 
     is_staff = models.BooleanField(default=False, blank=True)
 

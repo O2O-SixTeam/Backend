@@ -16,8 +16,3 @@ class ShopViewSet(viewsets.ModelViewSet):
         serializer.save(owner=self.request.user)
 
 
-        # @api_view(('GET',))
-        # def api_root(request, format=None):
-        #     return Response({
-        #         'shop': reverse('snippet-list', request=request, format=format)
-        #     })

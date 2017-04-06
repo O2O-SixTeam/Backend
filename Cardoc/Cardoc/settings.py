@@ -24,7 +24,7 @@ SECRET_KEY = '&rv2ps(4ym8a(_$(8^5^18xdl=7299@6*k#uj2#ag$u4z-o)k@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES': (
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+
 
 ]
 MIDDLEWARE = [

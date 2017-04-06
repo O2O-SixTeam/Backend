@@ -7,8 +7,6 @@ from Request.models import Request
 
 class RequestSerializer(serializers.HyperlinkedModelSerializer):
     requestedby = serializers.ReadOnlyField(source='owner.customid')
-    #estimate = serializers.HyperlinkedRelatedField(many=True, view_name='request-detail',read_only=True)
-
     estimate = EstimateSerializer(many=True, source='estimate_set', read_only=True)
 
     class Meta:
@@ -18,13 +16,3 @@ class RequestSerializer(serializers.HyperlinkedModelSerializer):
             'photo3', 'detail', 'extra', 'number', 'completed', 'estimate'
         )
 
-    # def create(self, validated_data):
-    #     estimates = validated_data.pop('estimate_set')
-    #     estimate = Estimate.objects.create(**validated_data)
-    #     for estimate in estimates:
-    #         Estimate.objects.create(
-    #             **validated_data
-    #
-    #
-    #         )
-    #     return estimate

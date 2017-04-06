@@ -12,8 +12,6 @@ class EstimateViewSet(viewsets.ModelViewSet):
     serializer_class = EstimateSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly)
 
-
-
-    # def perform_create(self, serializer):
-    #     serializer.save(owner=self.request.user)
-
+    def perform_create(self, serializer):
+        print(self.request.user)
+        serializer.save(owner=self.request.user)
