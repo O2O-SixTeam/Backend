@@ -26,14 +26,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_PERMISSION_CLASSES': (
-#         'rest_framework.permissions.IsAuthenticated',
-#     ),
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'rest_framework.authentication.TokenAuthentication',
-#     )
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
 AUTH_USER_MODEL = 'User.CustomUser'
 
 INSTALLED_APPS = [
@@ -48,15 +46,14 @@ INSTALLED_APPS = [
     'Shop',
     'Request',
     'Estimate',
+    'rest_auth',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
 
-
 ]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-
 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

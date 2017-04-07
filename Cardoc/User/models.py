@@ -14,11 +14,11 @@ GENDER_CHOICE = (
 
 
 class CustomUserManager(BaseUserManager):
-    @receiver(post_save, sender=settings.AUTH_USER_MODEL)
-    def create_auth_token(sender, instance=None, created=False, **kwargs):
-        if created:
-            token = Token.objects.create(user=instance)
-            print(token)
+    # @receiver(post_save, sender=settings.AUTH_USER_MODEL)
+    # def create_auth_token(sender, instance=None, created=False, **kwargs):
+    #     if created:
+    #         token = Token.objects.create(user=instance)
+    #         print(token)
 
     def create_user(self, customid, password=None, **extra_fields):
         user = self.model(
