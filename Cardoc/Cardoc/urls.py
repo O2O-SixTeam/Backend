@@ -29,6 +29,7 @@ router.register(r'shop', shopview.ShopViewSet)
 router.register(r'request', requestview.RequestVeiwSet)
 router.register(r'estimate', estimateview.EstimateViewSet)
 
+
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
@@ -36,6 +37,9 @@ urlpatterns = [
     url(r'^token-auth/', authtoken_views.obtain_auth_token),
     url(r'^rest-auth/logout/$', LogoutView.as_view()),
     url(r'^token-delete/$', views.DeleteToken.as_view()),
+
+    #Search URL
+    #url(r'shop/(?P<zone>.+)/$', shopview.ShopSearch.as_view()),
 
 ]
 # Authorization
