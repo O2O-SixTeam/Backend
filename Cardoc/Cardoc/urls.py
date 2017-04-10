@@ -20,6 +20,7 @@ from rest_framework.routers import DefaultRouter
 from Estimate import views as estimateview
 from Request import views as requestview
 from Shop import views as shopview
+from Shop.views import ShopSearch
 from User import views
 from User.views import LogoutView
 
@@ -38,8 +39,7 @@ urlpatterns = [
     url(r'^rest-auth/logout/$', LogoutView.as_view()),
     url(r'^token-delete/$', views.DeleteToken.as_view()),
 
-    #Search URL
-    #url(r'shop/(?P<zone>.+)/$', shopview.ShopSearch.as_view()),
+
 
 ]
 # Authorization
