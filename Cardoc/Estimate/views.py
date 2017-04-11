@@ -1,17 +1,22 @@
 import django_filters
-from django.shortcuts import render
 from rest_framework import permissions
 from rest_framework import viewsets
 
 from Estimate.models import Estimate
 from Estimate.serializers import EstimateSerializer
+from Request.models import Request
 from User.permissions import IsOwnerOrReadOnly
 
 
 class EstimateSearch(django_filters.rest_framework.FilterSet):
+    queryset = Request.objects.filter(completed=True)
+
     class Meta:
         model = Estimate
-        fields = ['completed','owner','insurancecost']
+        fields = {
+            'owner': ['exact'],
+            'noninsurancecost': ['exact']
+        }
 
 
 class EstimateViewSet(viewsets.ModelViewSet):

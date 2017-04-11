@@ -8,10 +8,12 @@ from User.permissions import IsOwnerOrReadOnly
 
 
 # http://127.0.0.1:8000/shop?zone=apt1 URL 형식
-class ShopSearch(django_filters.rest_framework.FilterSet):
+class ShopSearch(django_filters.FilterSet):
     class Meta:
         model = Shop
-        fields = ['zone']
+        fields = {
+            'zone': ['exact'],
+        }
 
 
 class ShopViewSet(viewsets.ModelViewSet):

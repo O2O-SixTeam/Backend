@@ -2,19 +2,24 @@ import django_filters
 from rest_framework import permissions
 from rest_framework import viewsets
 
-from Request.models import Request
+from Request.models import Request, BROKEN_CHOICE
 from Request.serializers import RequestSerializer
 from User.permissions import IsOwnerOrReadOnly
 
 
 class RequestSearch(django_filters.rest_framework.FilterSet):
-    queryset = Request.objects.get(completed=True)
+    queryset = Request.objects.filter(completed=True)
     serializer_class = RequestSerializer
-    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    broken1 = django_filters.ChoiceFilter(choices=BROKEN_CHOICE)
 
     class Meta:
         model = Request
-        fields = ['brand', 'broken1', 'broken2', 'broken3']
+        fields = {
+            'brand': ['exact'],
+            'broken1': ['exact'],
+        }
+
+        together = ['broken2', 'broken3']
 
 
 class RequestVeiwSet(viewsets.ModelViewSet):

@@ -4,7 +4,7 @@ from Estimate.models import Estimate
 
 
 class EstimateSerializer(serializers.HyperlinkedModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.customid')
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Estimate

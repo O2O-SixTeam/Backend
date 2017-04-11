@@ -6,7 +6,7 @@ from Request.models import Request
 
 
 class RequestSerializer(serializers.HyperlinkedModelSerializer):
-    requestedby = serializers.ReadOnlyField(source='owner.customid')
+    requestedby = serializers.ReadOnlyField(source='owner.username')
     estimate = EstimateSerializer(many=True, source='estimate_set', read_only=True)
 
     class Meta:
