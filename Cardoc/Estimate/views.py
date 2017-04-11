@@ -9,13 +9,15 @@ from User.permissions import IsOwnerOrReadOnly
 
 
 class EstimateSearch(django_filters.rest_framework.FilterSet):
-    queryset = Request.objects.filter(completed=True)
+    queryset = Request.objects.all()
+
+    # owner = django_filters.CharFilter(name='owner', lookup_expr='owner__username')
 
     class Meta:
         model = Estimate
         fields = {
             'owner': ['exact'],
-            'noninsurancecost': ['exact']
+            'completed': ['exact']
         }
 
 

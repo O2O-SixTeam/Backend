@@ -8,18 +8,21 @@ from User.permissions import IsOwnerOrReadOnly
 
 
 class RequestSearch(django_filters.rest_framework.FilterSet):
-    queryset = Request.objects.filter(completed=True)
+    queryset = Request.objects.all()
     serializer_class = RequestSerializer
     broken1 = django_filters.ChoiceFilter(choices=BROKEN_CHOICE)
+    broken2 = django_filters.ChoiceFilter(choices=BROKEN_CHOICE)
+    broken3 = django_filters.ChoiceFilter(choices=BROKEN_CHOICE)
 
     class Meta:
         model = Request
         fields = {
             'brand': ['exact'],
             'broken1': ['exact'],
+            'broken2': ['exact'],
+            'broken3': ['exact'],
+            'completed': ['exact'],
         }
-
-        together = ['broken2', 'broken3']
 
 
 class RequestVeiwSet(viewsets.ModelViewSet):

@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c2b43749-bd97-4e2c-8d2d-56e3270ddb84" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cardoc/db.sqlite3" afterPath="$PROJECT_DIR$/Cardoc/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cardoc/Estimate/serializers.py" afterPath="$PROJECT_DIR$/Cardoc/Estimate/serializers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cardoc/Cardoc/settings.py" afterPath="$PROJECT_DIR$/Cardoc/Cardoc/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cardoc/Estimate/views.py" afterPath="$PROJECT_DIR$/Cardoc/Estimate/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cardoc/Request/serializers.py" afterPath="$PROJECT_DIR$/Cardoc/Request/serializers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cardoc/Request/views.py" afterPath="$PROJECT_DIR$/Cardoc/Request/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cardoc/Shop/serializers.py" afterPath="$PROJECT_DIR$/Cardoc/Shop/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cardoc/Shop/views.py" afterPath="$PROJECT_DIR$/Cardoc/Shop/views.py" />
     </list>
     <ignored path="Project_Cardoc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,10 +27,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Cardoc/Request/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-128">
+              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Cardoc/Estimate/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="544">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -68,7 +76,6 @@
         <option value="$PROJECT_DIR$/Cardoc/Estimate/models.py" />
         <option value="$PROJECT_DIR$/Cardoc/Shop/models.py" />
         <option value="$PROJECT_DIR$/Cardoc/Cardoc/urls.py" />
-        <option value="$PROJECT_DIR$/Cardoc/Cardoc/settings.py" />
         <option value="$PROJECT_DIR$/Cardoc/User/serializers.py" />
         <option value="$PROJECT_DIR$/Cardoc/User/models.py" />
         <option value="$PROJECT_DIR$/Cardoc/User/views.py" />
@@ -77,8 +84,9 @@
         <option value="$PROJECT_DIR$/Cardoc/Estimate/serializers.py" />
         <option value="$PROJECT_DIR$/Cardoc/Request/serializers.py" />
         <option value="$PROJECT_DIR$/Cardoc/Shop/serializers.py" />
-        <option value="$PROJECT_DIR$/Cardoc/Request/views.py" />
+        <option value="$PROJECT_DIR$/Cardoc/Cardoc/settings.py" />
         <option value="$PROJECT_DIR$/Cardoc/Estimate/views.py" />
+        <option value="$PROJECT_DIR$/Cardoc/Request/views.py" />
       </list>
     </option>
   </component>
@@ -478,7 +486,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -487,7 +495,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967836" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967836" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27503017" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27503017" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -736,13 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cardoc/Cardoc/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Cardoc/User/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -779,14 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
           <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cardoc/Request/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -839,20 +832,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cardoc/Request/views.py">
+    <entry file="file://$PROJECT_DIR$/Cardoc/Cardoc/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        <state relative-caret-position="384">
+          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cardoc/Request/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cardoc/Estimate/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cardoc/Estimate/views.py">
+    <entry file="file://$PROJECT_DIR$/Cardoc/Request/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="-128">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
