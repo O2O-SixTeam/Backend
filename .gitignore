@@ -1,7 +1,7 @@
 # Created by https://www.gitignore.io/api/macos,python,django,pycharm
 
 ### Project Custom
-
+.idea
 ### Django ###
 *.log
 *.pot
@@ -44,6 +44,7 @@ Temporary Items
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
+.idea
 .idea/
 .idea/**/workspace.xml
 .idea/**/tasks.xml
