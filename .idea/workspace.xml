@@ -2,74 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50444322-0e25-464b-a9a9-1b4c70ce8dfe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/Project_Cardoc.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/migrations/0003_auto_20170404_0431.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/migrations/0004_auto_20170404_0433.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/Request/migrations/0003_auto_20170410_0632.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/Request/migrations/0004_auto_20170410_0638.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/Request/migrations/0005_auto_20170410_0639.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/User/migrations/0002_auto_20170404_0718.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/User/migrations/0003_auto_20170404_0719.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/User/migrations/0004_auto_20170404_0722.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/User/migrations/0005_auto_20170404_0729.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/User/migrations/0006_remove_customuser_name.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/User/migrations/0007_customuser_name.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/User/migrations/0008_auto_20170411_0207.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/db.sqlite3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/log_left.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cardoc/log_left_ZX7M87C.jpg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Cardoc/__init__.py" afterPath="$PROJECT_DIR$/django_app/Estimate/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Cardoc/settings.py" afterPath="$PROJECT_DIR$/django_app/config/settings.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Cardoc/urls.py" afterPath="$PROJECT_DIR$/django_app/config/urls.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Cardoc/wsgi.py" afterPath="$PROJECT_DIR$/django_app/config/wsgi.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/__init__.py" afterPath="$PROJECT_DIR$/django_app/Estimate/migrations/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/admin.py" afterPath="$PROJECT_DIR$/django_app/Estimate/admin.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/apps.py" afterPath="$PROJECT_DIR$/django_app/Estimate/apps.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/django_app/Estimate/migrations/0001_initial.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/migrations/0002_auto_20170404_0416.py" afterPath="$PROJECT_DIR$/django_app/Estimate/migrations/0002_auto_20170411_1242.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/migrations/__init__.py" afterPath="$PROJECT_DIR$/django_app/Request/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/models.py" afterPath="$PROJECT_DIR$/django_app/Estimate/models.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/serializers.py" afterPath="$PROJECT_DIR$/django_app/Estimate/serializers.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/tests.py" afterPath="$PROJECT_DIR$/django_app/Estimate/tests.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Estimate/views.py" afterPath="$PROJECT_DIR$/django_app/Estimate/views.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Request/__init__.py" afterPath="$PROJECT_DIR$/django_app/Request/migrations/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Request/admin.py" afterPath="$PROJECT_DIR$/django_app/Request/admin.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Request/apps.py" afterPath="$PROJECT_DIR$/django_app/Request/apps.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Request/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/django_app/Request/migrations/0001_initial.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Request/migrations/0002_request_owner.py" afterPath="$PROJECT_DIR$/django_app/Request/migrations/0002_request_owner.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Request/migrations/__init__.py" afterPath="$PROJECT_DIR$/django_app/Shop/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Request/models.py" afterPath="$PROJECT_DIR$/django_app/Request/models.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Request/serializers.py" afterPath="$PROJECT_DIR$/django_app/Request/serializers.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Request/tests.py" afterPath="$PROJECT_DIR$/django_app/Request/tests.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Request/views.py" afterPath="$PROJECT_DIR$/django_app/Request/views.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Shop/__init__.py" afterPath="$PROJECT_DIR$/django_app/Shop/migrations/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Shop/admin.py" afterPath="$PROJECT_DIR$/django_app/Shop/admin.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Shop/apps.py" afterPath="$PROJECT_DIR$/django_app/Shop/apps.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Shop/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/django_app/Shop/migrations/0001_initial.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Shop/migrations/0002_shop_owner.py" afterPath="$PROJECT_DIR$/django_app/Shop/migrations/0002_shop_owner.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Shop/migrations/__init__.py" afterPath="$PROJECT_DIR$/django_app/User/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Shop/models.py" afterPath="$PROJECT_DIR$/django_app/Shop/models.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Shop/serializers.py" afterPath="$PROJECT_DIR$/django_app/Shop/serializers.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Shop/tests.py" afterPath="$PROJECT_DIR$/django_app/Shop/tests.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/Shop/views.py" afterPath="$PROJECT_DIR$/django_app/Shop/views.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/User/__init__.py" afterPath="$PROJECT_DIR$/django_app/User/migrations/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/User/admin.py" afterPath="$PROJECT_DIR$/django_app/User/admin.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/User/apps.py" afterPath="$PROJECT_DIR$/django_app/User/apps.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/User/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/django_app/User/migrations/0001_initial.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/User/migrations/__init__.py" afterPath="$PROJECT_DIR$/django_app/config/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/User/models.py" afterPath="$PROJECT_DIR$/django_app/User/models.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/User/permissions.py" afterPath="$PROJECT_DIR$/django_app/User/permissions.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/User/serializers.py" afterPath="$PROJECT_DIR$/django_app/User/serializers.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/User/tests.py" afterPath="$PROJECT_DIR$/django_app/User/tests.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/User/views.py" afterPath="$PROJECT_DIR$/django_app/User/views.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/manage.py" afterPath="$PROJECT_DIR$/django_app/manage.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Cardoc/requirements.txt" afterPath="$PROJECT_DIR$/django_app/requirements.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.python-version" afterPath="$PROJECT_DIR$/.python-version" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
