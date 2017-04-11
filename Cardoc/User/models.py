@@ -20,18 +20,18 @@ class CustomUserManager(BaseUserManager):
     #         token = Token.objects.create(user=instance)
     #         print(token)
 
-    def create_user(self, customid, password=None, **extra_fields):
+    def create_user(self, username, password=None, **extra_fields):
         user = self.model(
-            customid=customid,
+            username=username,
             **extra_fields
         )
         user.set_password(password)
         user.save()
         return user
 
-    def create_superuser(self, customid, password, **extra_fields):
+    def create_superuser(self, username, password, **extra_fields):
         user = self.model(
-            customid=customid,
+            username=username,
             **extra_fields
         )
         user.set_password(password)
@@ -47,11 +47,11 @@ class CustomUser(PermissionsMixin, AbstractBaseUser):
     gender = models.CharField(choices=GENDER_CHOICE, null=True, blank=True, max_length=10)
     email = models.EmailField(max_length=50, null=True, blank=True)
     birth = models.DateField(null=True, blank=True)
-    customid = models.CharField(max_length=50, null=True, blank=True, unique=True, )
+    username = models.CharField(max_length=50, null=True, blank=True, unique=True, )
 
     is_staff = models.BooleanField(default=False, blank=True)
 
-    USERNAME_FIELD = 'customid'
+    USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []
 
     objects = CustomUserManager()

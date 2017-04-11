@@ -11,7 +11,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = CustomUser
-        fields = ('url', 'name', 'phone', 'gender', 'email', 'birth', 'customid', 'password', 'shop', 'request',)
+        fields = ('url', 'name', 'phone', 'gender', 'email', 'birth', 'username', 'password', 'shop', 'request',)
 
     def create(self, validated_data):
         instance = CustomUser.objects.create_user(**validated_data)
