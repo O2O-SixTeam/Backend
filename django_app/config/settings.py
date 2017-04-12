@@ -39,7 +39,7 @@ STATICFILES_DIRS = (
 
 # CONFIG FILE
 CONFIG_FILE_COMMON = os.path.join(CONF_DIR, 'settings_common.json')
-CONFIG_FILE = os.path.join(CONF_DIR, 'settings_local.json')
+CONFIG_FILE = os.path.join(CONF_DIR, 'settings_local.json' if DEBUG else 'settings_deploy.json')
 print('CONFIG_FILE : {}'.format(CONFIG_FILE))
 
 config_common = json.loads(open(CONFIG_FILE_COMMON).read())

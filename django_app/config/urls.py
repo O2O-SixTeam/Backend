@@ -21,9 +21,9 @@ from rest_framework.routers import DefaultRouter
 from Estimate import views as estimateview
 from Request import views as requestview
 from Shop import views as shopview
-from Shop.views import ShopSearch
 from User import views
 from User.views import LogoutView
+from config.views import index
 
 router = DefaultRouter()
 router.register(r'user', views.UserViewSet)
@@ -31,19 +31,17 @@ router.register(r'shop', shopview.ShopViewSet)
 router.register(r'request', requestview.RequestVeiwSet)
 router.register(r'estimate', estimateview.EstimateViewSet)
 
-
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
+    url(r'^admin/', admin.site.urls),
+    url(r'^index/', index, name='index'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^rest-auth/', include('rest_auth.urls')),
     url(r'^token-auth/', authtoken_views.obtain_auth_token),
     url(r'^rest-auth/logout/$', LogoutView.as_view()),
     url(r'^token-delete/$', views.DeleteToken.as_view()),
-
-
-
 ]
+
 # Authorization
 # Basic Y2hhbmdqYTg4OmRqZG5sczg4
 # 855403c2a6d9b7f43552ac14d7a3fa3a2e05c53c"
