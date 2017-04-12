@@ -11,20 +11,40 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&rv2ps(4ym8a(_$(8^5^18xdl=7299@6*k#uj2#ag$u4z-o)k@'
+import json
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT_DIR = os.path.dirname(BASE_DIR)
+CONF_DIR = os.path.join(ROOT_DIR, '.conf-secret')
+
+# CONFIG FILE
+CONFIG_FILE_COMMON = os.path.join(CONF_DIR, 'settings_common.json')
+CONFIG_FILE = os.path.join(CONF_DIR, 'settings_local.json')
+print('CONFIG_FILE : {}'.format(CONFIG_FILE))
+
+config_common = json.loads(open(CONFIG_FILE_COMMON).read())
+config = json.loads(open(CONFIG_FILE).read())
+
+for key, key_dict in config_common.items():
+    if not config.get(key):
+        config[key] = {}
+    for inner_key, inner_key_dict in key_dict.items():
+        config[key][inner_key] = inner_key_dict
+
+print(config)
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = config['django']['secret_key']
+ALLOWED_HOSTS = config['django']['allowed_hosts']
+
+
+
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -126,7 +146,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ko-KR'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
