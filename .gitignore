@@ -2,6 +2,7 @@
 
 ### Project Custom
 .conf-secret
+static_root/
 
 ### Django ###
 *.log

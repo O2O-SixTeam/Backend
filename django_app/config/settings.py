@@ -20,7 +20,6 @@ DB_RDS = os.environ.get('DB') == 'RDS'
 print('DEBUG : {}'.format(DEBUG))
 print('DB_RDS: {}'.format(DB_RDS))
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.dirname(BASE_DIR)
@@ -31,7 +30,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(ROOT_DIR, 'static_root')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     STATIC_DIR,
@@ -53,11 +54,9 @@ for key, key_dict in config_common.items():
 
 print(config)
 
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config['django']['secret_key']
 ALLOWED_HOSTS = config['django']['allowed_hosts']
-
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -181,4 +180,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
