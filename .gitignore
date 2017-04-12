@@ -1,7 +1,8 @@
 # Created by https://www.gitignore.io/api/macos,python,django,pycharm
 
 ### Project Custom
-.idea
+.conf-secret
+
 ### Django ###
 *.log
 *.pot
@@ -128,7 +129,7 @@ wheels/
 *.egg
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
+#  Usually these files are written by a python script from a templates
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
