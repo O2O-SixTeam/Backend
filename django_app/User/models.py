@@ -1,6 +1,7 @@
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
@@ -49,19 +50,23 @@ class CustomUser(PermissionsMixin, AbstractBaseUser):
     birth = models.DateField(null=True, blank=True)
     username = models.CharField(max_length=50, null=True, blank=True, unique=True, )
     is_staff = models.BooleanField(default=False, blank=True)
-<<<<<<< HEAD
     profile_img = models.ImageField(upload_to='user', blank=True)
-=======
->>>>>>> master
+    is_active = models.BooleanField(
+        _('active'),
+        default=True,
+        help_text=_(
+            'Designates whether this user should be treated as active. '
+            'Unselect this instead of deleting accounts.'
+        ),
+    )
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []
 
     objects = CustomUserManager()
-<<<<<<< HEAD
 
     def get_short_name(self):
         "Returns the short name for the user."
         return self.name
-=======
->>>>>>> master
+
+
