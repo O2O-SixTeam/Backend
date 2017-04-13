@@ -48,10 +48,14 @@ class CustomUser(PermissionsMixin, AbstractBaseUser):
     email = models.EmailField(max_length=50, null=True, blank=True)
     birth = models.DateField(null=True, blank=True)
     username = models.CharField(max_length=50, null=True, blank=True, unique=True, )
-
     is_staff = models.BooleanField(default=False, blank=True)
+    profile_img = models.ImageField(upload_to='user', blank=True)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []
 
     objects = CustomUserManager()
+
+    def get_short_name(self):
+        "Returns the short name for the user."
+        return self.name
