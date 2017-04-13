@@ -18,6 +18,7 @@ DEBUG = os.environ.get('MODE') == 'DEBUG'
 DB_RDS = os.environ.get('DB') == 'RDS'
 DEBUG = True
 DB_RDS = True
+
 print('DEBUG : {}'.format(DEBUG))
 print('DB_RDS: {}'.format(DB_RDS))
 

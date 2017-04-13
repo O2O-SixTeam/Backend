@@ -16,7 +16,10 @@ class Shop(models.Model):
     photo1 = models.ImageField(max_length=None, blank=True, null=True)
     photo2 = models.ImageField(max_length=None, blank=True, null=True)
     photo3 = models.ImageField(max_length=None, blank=True, null=True)
+<<<<<<< HEAD
+=======
     bnumber = models.CharField(max_length=20,blank=True,null=True)
+>>>>>>> master
 
     def save(self, *args, **kwargs):
         super(Shop, self).save(*args, **kwargs)
