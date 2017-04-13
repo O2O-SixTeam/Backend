@@ -50,6 +50,7 @@ class CustomUser(PermissionsMixin, AbstractBaseUser):
     username = models.CharField(max_length=50, null=True, blank=True, unique=True, )
     is_staff = models.BooleanField(default=False, blank=True)
 
+
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []
 
