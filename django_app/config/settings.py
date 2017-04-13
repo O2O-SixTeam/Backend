@@ -11,20 +11,14 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-import json
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('MODE') == 'DEBUG'
-DB_RDS = os.environ.get('DB') == 'RDS'
+
 DEBUG = True
-DB_RDS = True
-print('DEBUG : {}'.format(DEBUG))
-print('DB_RDS: {}'.format(DB_RDS))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.dirname(BASE_DIR)
-CONF_DIR = os.path.join(ROOT_DIR, '.conf-secret')
 
 # Templates path
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
@@ -38,25 +32,9 @@ STATICFILES_DIRS = (
     STATIC_DIR,
 )
 
-# CONFIG FILE
-CONFIG_FILE_COMMON = os.path.join(CONF_DIR, 'settings_common.json')
-CONFIG_FILE = os.path.join(CONF_DIR, 'settings_local.json' if DEBUG else 'settings_deploy.json')
-print('CONFIG_FILE : {}'.format(CONFIG_FILE))
-
-config_common = json.loads(open(CONFIG_FILE_COMMON).read())
-config = json.loads(open(CONFIG_FILE).read())
-
-for key, key_dict in config_common.items():
-    if not config.get(key):
-        config[key] = {}
-    for inner_key, inner_key_dict in key_dict.items():
-        config[key][inner_key] = inner_key_dict
-
-print(config)
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config['django']['secret_key']
-ALLOWED_HOSTS = config['django']['allowed_hosts']
+SECRET_KEY = 'pkmz&c!1f4ic@st!truf9jvj10@ro90hsnz*4-fmx(d+eb&60i'
+ALLOWED_HOSTS = ['*']
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -130,24 +108,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-## AWS RDS U: taehn / P: 1234qwer
-
-if DEBUG and DB_RDS:
-    # DEBUG 모드이며 DB_RDS옵션일 경우 로컬 postgreSQL이 아닌 RDS로 접속해 테스트한다
-    config_db = config['db_rds']
-else:
-    # 그 외의 경우에는 해당 db설정을 따름
-    config_db = config['db']
-
 DATABASES = {
-    'default': {
-        'ENGINE': config_db['engine'],
-        'NAME': config_db['name'],
-        'USER': config_db['user'],
-        'PASSWORD': config_db['password'],
-        'HOST': config_db['host'],
-        'PORT': config_db['port'],
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+   }
 }
 
 # Password validation
